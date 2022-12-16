@@ -14,7 +14,7 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, TutorialMod.MOD_ID);
 
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
-            () -> new Item(new Item.Properties().isImmuneToFire().group(ItemGroup.MATERIALS)));
+            () -> new Item(new Item.Properties().isImmuneToFire().group(ModItemGroup.TUTORIAL_GROUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
