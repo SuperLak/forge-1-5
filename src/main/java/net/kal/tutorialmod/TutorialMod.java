@@ -1,5 +1,6 @@
 package net.kal.tutorialmod;
 
+import net.kal.tutorialmod.block.ModBlocks;
 import net.kal.tutorialmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -33,6 +34,7 @@ public class TutorialMod
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

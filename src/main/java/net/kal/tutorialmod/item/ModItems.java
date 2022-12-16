@@ -2,7 +2,6 @@ package net.kal.tutorialmod.item;
 
 import net.kal.tutorialmod.TutorialMod;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
