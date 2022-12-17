@@ -15,7 +15,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties().isImmuneToFire().group(ModItemGroup.TUTORIAL_GROUP)));
-    public static final RegistryObject<Item> FIREGEM = ITEMS.register("fire_gem",
+    public static final RegistryObject<Item> FIRE_GEM = ITEMS.register("fire_gem",
             () -> new FireGem(new Item.Properties().isImmuneToFire().group(ModItemGroup.TUTORIAL_GROUP)
                     .maxDamage(120)));
 
