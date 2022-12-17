@@ -1,19 +1,14 @@
 package net.kal.tutorialmod.item.custom;
 
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.CampfireBlock;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -22,8 +17,8 @@ import net.minecraft.world.World;
 
 import java.util.Objects;
 
-public class Firestone extends Item {
-    public Firestone(Properties properties) {
+public class FireGem extends Item {
+    public FireGem(Properties properties) {
         super(properties);
     }
 
@@ -35,45 +30,30 @@ public class Firestone extends Item {
             PlayerEntity playerEntity = Objects.requireNonNull(context.getPlayer());
             BlockState clickedBlock = world.getBlockState(context.getPos());
 
-            rightClickOnCertainBlockState(clickedBlock, context, playerEntity);
-            stack.damageItem(1, playerEntity, player -> player.sendBreakAnimation(context.getHand()));
+            rightClickOnCertainBlockState(clickedBlock, context, playerEntity, stack);
         }
 
         return super.onItemUseFirst(stack, context);
     }
 
     private void rightClickOnCertainBlockState(BlockState clickedBlock, ItemUseContext context,
-                                               PlayerEntity playerEntity) {
-        boolean playerIsNotOnFire = !playerEntity.isBurning();
+                                               PlayerEntity playerEntity, ItemStack stack) {
 
-        if(random.nextFloat() > 0.5f) {
-            // light player on fire!!
-            lightEntityOnFire(playerEntity, 6);
-        } else if (playerIsNotOnFire && blockIsValidForResistance(clickedBlock)){
-            // give player fire resistance
-            gainFireResistanceAndDestroyBlock(playerEntity, context.getWorld(), context.getPos());
+        if (playerEntity.isCrouching()) {
+            gainFireResistance(playerEntity, 1200);
+            stack.damageItem(10, playerEntity, player -> player.sendBreakAnimation(context.getHand()));
         } else {
-            // light ground on fire
             lightGroundOnFire(context);
+            stack.damageItem(1, playerEntity, player -> player.sendBreakAnimation(context.getHand()));
         }
-
     }
 
     private boolean blockIsValidForResistance(BlockState clickedBlock) {
-        return clickedBlock.getBlock() == Blocks.OBSIDIAN;
+        return clickedBlock.getBlock() == Blocks.AIR;
     }
 
-    public static void lightEntityOnFire(Entity entity, int second) {
-        entity.setFire(second);
-    }
-
-    private void gainFireResistanceAndDestroyBlock(PlayerEntity playerEntity, World world, BlockPos pos) {
-        gainFireResistance(playerEntity);
-        world.destroyBlock(pos, false);
-    }
-
-    public static void gainFireResistance(PlayerEntity playerEntity) {
-        playerEntity.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 200));
+    public static void gainFireResistance(PlayerEntity playerEntity, int duration) {
+        playerEntity.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, duration));
     }
 
     public static void lightGroundOnFire(ItemUseContext context) {
