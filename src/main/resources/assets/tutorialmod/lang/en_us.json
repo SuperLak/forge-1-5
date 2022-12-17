@@ -2,7 +2,10 @@
   "item.tutorialmod.ruby": "Ruby",
   "block.tutorialmod.ruby_ore": "Ruby Ore",
   "block.tutorialmod.ruby_block": "Block of Ruby",
+
   "item.tutorialmod.fire_gem": "Fire Gem",
+
+  "block.tutorialmod.firestone_block": "Firestone Block",
 
   "itemGroup.tutorialModTab": "Tutorial Tab"
 }
