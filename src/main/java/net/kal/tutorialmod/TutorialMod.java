@@ -2,6 +2,7 @@ package net.kal.tutorialmod;
 
 import net.kal.tutorialmod.block.ModBlocks;
 import net.kal.tutorialmod.item.ModItems;
+import net.kal.tutorialmod.util.ModItemModelProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -57,6 +58,7 @@ public class TutorialMod
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
+        ModItemModelProperties.makeBow(ModItems.SOULSEEKER.get());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
