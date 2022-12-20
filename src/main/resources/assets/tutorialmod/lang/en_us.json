@@ -8,13 +8,22 @@
   "item.tutorialmod.ruby_axe": "Ruby Axe",
   "item.tutorialmod.ruby_shovel": "Ruby Shovel",
   "item.tutorialmod.ruby_hoe": "Ruby Hoe",
+  "item.tutorialmod.ruby_spear": "Ruby Spear",
 
   "item.tutorialmod.fire_gem": "Fire Gem",
 
+  "item.tutorialmod.jai_spear": "\u00A7lJai Spear\u00A7r",
   "item.tutorialmod.soulseeker": "\u00A75Suu, Ancient Bow of the Soulseeker\u00A7r",
 
   "tooltip.tutorialmod.fire_gem_shift": "Click block to start fire; crouch & click to gain Fire Resistance",
   "tooltip.tutorialmod.fire_gem": "Hold \u00A7eSHIFT\u00A7r for more info",
 
+  "tooltip.tutorialmod.jai_spear_shift": "Use on the ground to activate, granting power at the price of durability",
+  "tooltip.tutorialmod.jai_spear": "Hold \u00A7eSHIFT\u00A7r for more info",
+
+  "message.tutorialmod.inactive": "Inactive Mode",
+  "tooltip.tutorialmod.active": "Active Mode",
+
   "itemGroup.tutorialModTab": "Tutorial Tab"
+
 }

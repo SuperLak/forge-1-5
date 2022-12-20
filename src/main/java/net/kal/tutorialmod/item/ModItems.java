@@ -2,6 +2,7 @@ package net.kal.tutorialmod.item;
 
 import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.item.custom.FireGem;
+import net.kal.tutorialmod.item.custom.JaiSpear;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
@@ -35,7 +36,14 @@ public class ModItems {
     public static final RegistryObject<Item> RUBY_HOE = ITEMS.register("ruby_hoe",
             () -> new SwordItem(ModItemTier.RUBY, -2, -3f,
                     new Item.Properties().isImmuneToFire().group(ModItemGroup.TUTORIAL_GROUP)));
+    public static final RegistryObject<Item> RUBY_SPEAR = ITEMS.register("ruby_spear",
+            () -> new SpearItem(ModItemTier.RUBY, 0, -2f,
+                    new Item.Properties().isImmuneToFire().group(ModItemGroup.TUTORIAL_GROUP)));
 
+
+    public static final RegistryObject<Item> JAI_SPEAR = ITEMS.register("jai_spear",
+            () -> new JaiSpear(ModItemTier.MADRA, 2, -2f,
+                    new Item.Properties().group(ModItemGroup.TUTORIAL_GROUP)));
     public static final RegistryObject<Item> SOULSEEKER = ITEMS.register("soulseeker",
             () -> new BowItem(new Item.Properties().group(ModItemGroup.TUTORIAL_GROUP).maxStackSize(1)));
 
