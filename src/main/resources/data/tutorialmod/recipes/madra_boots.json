@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "tutorialmod:madra_chunk"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:madra_boots"
+  }
+}

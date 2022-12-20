@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  X",
+    " # ",
+    "#  "
+  ],
+  "key": {
+    "#": {
+      "item": "tutorialmod:infused_stick"
+    },
+    "X": {
+      "item": "tutorialmod:madra"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:jai_spear"
+  }
+}

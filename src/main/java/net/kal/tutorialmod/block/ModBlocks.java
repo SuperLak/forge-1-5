@@ -35,6 +35,15 @@ public class ModBlocks {
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
 
 
+    public static final RegistryObject<Block> MADRA_ORE = registerBlock("madra_ore",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+
+    public static final RegistryObject<Block> MADRA_BLOCK = registerBlock("madra_block",
+            () -> new Block(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+
+
     public static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
@@ -42,8 +51,13 @@ public class ModBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().group(ModItemGroup.TUTORIAL_GROUP)));
+        if (name.substring(0, 4) == "madra") {
+            ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
+        } else {
+            ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                    new Item.Properties().group(ModItemGroup.RUBY_GROUP)));
+        }
     }
 
     public static void register(IEventBus eventBus) {

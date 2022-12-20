@@ -19,6 +19,28 @@
 
   "item.tutorialmod.fire_gem": "Fire Gem",
 
+
+  "item.tutorialmod.madra": "Madra",
+  "item.tutorialmod.madra_chunk": "Madra Chunk",
+  "item.tutorialmod.infused_stick": "Infused Stick",
+  "item.tutorialmod.infused_string": "Infused String",
+
+  "block.tutorialmod.madra_ore": "Madra Ore",
+  "block.tutorialmod.madra_block": "Block of Madra",
+
+  "item.tutorialmod.madra_sword": "Madra Sword",
+  "item.tutorialmod.madra_pickaxe": "Madra Pickaxe",
+  "item.tutorialmod.madra_axe": "Madra Axe",
+  "item.tutorialmod.madra_shovel": "Madra Shovel",
+  "item.tutorialmod.madra_hoe": "Madra Hoe",
+
+  "item.tutorialmod.madra_spear": "Madra Spear",
+
+  "item.tutorialmod.madra_helmet": "Madra Helmet",
+  "item.tutorialmod.madra_chestplate": "Madra Chestplate",
+  "item.tutorialmod.madra_leggings": "Madra Leggings",
+  "item.tutorialmod.madra_boots": "Madra Boots",
+
   "item.tutorialmod.jai_spear": "\u00A7lJai Spear\u00A7r",
   "item.tutorialmod.soulseeker": "\u00A75Suu, Ancient Bow of the Soulseeker\u00A7r",
 
@@ -31,6 +53,7 @@
   "message.tutorialmod.inactive": "Inactive Mode",
   "tooltip.tutorialmod.active": "Active Mode",
 
-  "itemGroup.tutorialModTab": "Tutorial Tab"
+  "itemGroup.rubyTab": "Ruby Tab",
+  "itemGroup.madraTab": "Madra Tab"
 
 }

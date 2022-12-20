@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#X#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "X": {
+      "item": "tutorialmod:madra"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:infused_string",
+    "count": 4
+  }
+}

@@ -8,8 +8,10 @@ import java.util.function.Supplier;
 
 public enum ModItemTier implements IItemTier {
 
-    RUBY(3, 328, 4f, 3f, 6,
-            () -> Ingredient.fromItems(ModItems.RUBY.get()));
+    RUBY(2, 328, 4f, 3f, 6,
+            () -> Ingredient.fromItems(ModItems.RUBY.get())),
+    MADRA(3, 1400, 7f, 3f, 14,
+            () -> Ingredient.fromItems(ModItems.MADRA.get()));
 
     private final int harvestLevel;
     private final int maxUses;
