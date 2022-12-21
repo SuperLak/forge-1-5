@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -26,7 +27,8 @@ import java.util.Objects;
 
 public class JaiSpear extends SpearItem {
 
-    private boolean isActive = true;
+    private boolean isActive = false;
+    private int tickCounter = 0;
 
     public JaiSpear(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builderIn) {
         super(tier, attackDamageIn, attackSpeedIn, builderIn);
@@ -37,11 +39,8 @@ public class JaiSpear extends SpearItem {
 
         if (isActive) {
             target.addPotionEffect(new EffectInstance(Effects.GLOWING, 600));
-            target.addPotionEffect(new EffectInstance(Effects.WITHER, 100));
+            attacker.addPotionEffect(new EffectInstance(Effects.STRENGTH, 200));
             attacker.addPotionEffect(new EffectInstance(Effects.REGENERATION, 100));
-            stack.damageItem(49, attacker, (entity) -> {
-                entity.sendBreakAnimation(EquipmentSlotType.MAINHAND);
-            });
         }
         return super.hitEntity(stack, target, attacker);
     }
@@ -57,9 +56,28 @@ public class JaiSpear extends SpearItem {
     }
 
     @Override
+    public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+
+        if (isActive) {
+            tickCounter++;
+            if (tickCounter == 200) {
+                int damage = stack.getDamage();
+                if (damage < 20) {
+                    damage = 20;
+                }
+                stack.setDamage(damage + 20);
+                tickCounter = 0;
+                Minecraft.getInstance().player.addPotionEffect(new EffectInstance(Effects.STRENGTH, 200));
+            }
+        }
+        super.inventoryTick(stack, worldIn, entityIn, itemSlot, isSelected);
+    }
+
+    @Override
     public ActionResultType onItemUseFirst(ItemStack stack, ItemUseContext context) {
 
         World world = context.getWorld();
+        PlayerEntity playerEntity = Objects.requireNonNull(context.getPlayer());
         if (!world.isRemote) {
             if (!isActive) {
                 isActive = true;
@@ -71,7 +89,6 @@ public class JaiSpear extends SpearItem {
                 Minecraft.getInstance().player.sendMessage(component, null);
             }
         }
-
         return super.onItemUseFirst(stack, context);
     }
 }
