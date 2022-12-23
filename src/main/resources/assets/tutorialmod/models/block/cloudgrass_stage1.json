@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "tutorialmod:block/oats_stage1"
+    "crop": "tutorialmod:block/cloudgrass_stage1"
   }
 }

@@ -17,6 +17,9 @@ public enum ModArmorMaterial implements IArmorMaterial {
 
     RUBY("ruby", 15, new int[]{2, 5, 6, 3}, 4, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
             1.0F, 0.1F, () -> {return Ingredient.fromItems(ModItems.RUBY.get());}),
+
+    OZ("oz", 15, new int[]{1, 1, 1, 4}, 1, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+            1.0F, 0.1F, () -> {return Ingredient.fromItems(ModItems.MADRA.get());}),
     MADRA("madra", 15, new int[]{3, 5, 7, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
             2.0F, 0.3F, () -> {return Ingredient.fromItems(ModItems.MADRA.get());});
 

@@ -10,7 +10,7 @@ public enum ModItemTier implements IItemTier {
 
     RUBY(2, 328, 4f, 3f, 6,
             () -> Ingredient.fromItems(ModItems.RUBY.get())),
-    MADRA(3, 1400, 7f, 3f, 14,
+    MADRA(3, 280, 7f, 3f, 14,
             () -> Ingredient.fromItems(ModItems.MADRA.get()));
 
     private final int harvestLevel;

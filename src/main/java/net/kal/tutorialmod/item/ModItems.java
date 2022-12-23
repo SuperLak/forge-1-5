@@ -104,7 +104,12 @@ public class ModItems {
             () -> new JaiSpear(ModItemTier.MADRA, 2, -2f,
                     new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
     public static final RegistryObject<Item> SOULSEEKER = ITEMS.register("soulseeker",
-            () -> new BowItem(new Item.Properties().group(ModItemGroup.MADRA_GROUP).maxStackSize(1)));
+            () -> new BowItem(new Item.Properties()
+                    .group(ModItemGroup.MADRA_GROUP).maxStackSize(1)));
+
+    public static final RegistryObject<Item> CROWN = ITEMS.register("crown",
+            () -> new ArmorItem(ModArmorMaterial.OZ, EquipmentSlotType.HEAD,
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
 
 
 
