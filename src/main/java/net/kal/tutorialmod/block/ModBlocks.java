@@ -1,7 +1,7 @@
 package net.kal.tutorialmod.block;
 
 import net.kal.tutorialmod.TutorialMod;
-import net.kal.tutorialmod.block.custom.OatsBlock;
+import net.kal.tutorialmod.block.custom.CloudgrassBlock;
 import net.kal.tutorialmod.item.ModItemGroup;
 import net.kal.tutorialmod.item.ModItems;
 import net.minecraft.block.AbstractBlock;
@@ -44,8 +44,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> MADRA_BLOCK = registerMadraBlock("madra_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
-    public static final RegistryObject<Block> OATS = BLOCKS.register("oats_crop",
-            () -> new OatsBlock(AbstractBlock.Properties.from(Blocks.WHEAT)));
+    public static final RegistryObject<Block> CLOUDGRASS = BLOCKS.register("cloudgrass_crop",
+            () -> new CloudgrassBlock(AbstractBlock.Properties.from(Blocks.WHEAT)));
 
 
     public static <T extends Block>RegistryObject<T> registerRubyBlock(String name, Supplier<T> block) {

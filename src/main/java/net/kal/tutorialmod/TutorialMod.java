@@ -61,7 +61,7 @@ public class TutorialMod
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         ModItemModelProperties.makeBow(ModItems.SOULSEEKER.get());
-        RenderTypeLookup.setRenderLayer(ModBlocks.OATS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CLOUDGRASS.get(), RenderType.getCutout());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

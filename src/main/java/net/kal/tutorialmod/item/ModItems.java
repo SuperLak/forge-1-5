@@ -108,10 +108,12 @@ public class ModItems {
 
 
 
-    public static final RegistryObject<Item> OATS = ITEMS.register("oats",
-            () -> new BlockItem(ModBlocks.OATS.get(), new Item.Properties()
-                    .food(new Food.Builder().hunger(1).saturation(0.1f).fastToEat().build())
-                    .group(ModItemGroup.MADRA_GROUP)));
+    public static final RegistryObject<Item> CLOUDGRASS_SEEDS = ITEMS.register("cloudgrass_seeds",
+            () -> new BlockItem(ModBlocks.CLOUDGRASS.get(),
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
+
+    public static final RegistryObject<Item> CLOUDGRASS = ITEMS.register("cloudgrass",
+            () -> new Item( new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

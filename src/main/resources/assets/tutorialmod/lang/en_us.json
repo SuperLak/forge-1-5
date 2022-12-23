@@ -53,7 +53,8 @@
   "message.tutorialmod.inactive": "Inactive Mode",
   "tooltip.tutorialmod.active": "Active Mode",
 
-  "block.tutorialmod.oats_crop": "Oats",
+  "item.tutorialmod.cloudgrass": "Cloudgrass",
+  "block.tutorialmod.cloudgrass_crop": "Cloudgrass Seeds",
 
   "itemGroup.rubyTab": "Ruby Tab",
   "itemGroup.madraTab": "Madra Tab"

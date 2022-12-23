@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tutorialmod:oats_crop",
+                  "block": "tutorialmod:cloudgrass_crop",
                   "properties": {
-                    "age": "7"
+                    "age": "4"
                   }
                 }
               ],
-              "name": "tutorialmod:oats"
+              "name": "tutorialmod:cloudgrass"
             },
             {
               "type": "minecraft:item",
-              "name": "tutorialmod:oats"
+              "name": "tutorialmod:cloudgrass_seeds"
             }
           ]
         }
@@ -39,20 +39,20 @@
               "enchantment": "minecraft:fortune",
               "formula": "minecraft:binomial_with_bonus_count",
               "parameters": {
-                "extra": 5,
+                "extra": 3,
                 "probability": 0.5714286
               }
             }
           ],
-          "name": "tutorialmod:oats"
+          "name": "tutorialmod:cloudgrass_seeds"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "tutorialmod:oats_crop",
+          "block": "tutorialmod:cloudgrass_crop",
           "properties": {
-            "age": "7"
+            "age": "4"
           }
         }
       ]
