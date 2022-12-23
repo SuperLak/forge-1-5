@@ -1,10 +1,12 @@
 package net.kal.tutorialmod.block;
 
 import net.kal.tutorialmod.TutorialMod;
+import net.kal.tutorialmod.block.custom.OatsBlock;
 import net.kal.tutorialmod.item.ModItemGroup;
 import net.kal.tutorialmod.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
@@ -21,43 +23,51 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
              DeferredRegister.create(ForgeRegistries.BLOCKS, TutorialMod.MOD_ID);
 
-    public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
+    public static final RegistryObject<Block> RUBY_ORE = registerRubyBlock("ruby_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
 
-    public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
+    public static final RegistryObject<Block> RUBY_BLOCK = registerRubyBlock("ruby_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
 
-    public static final RegistryObject<Block> RUBY_STAIRS = registerBlock("ruby_stairs",
+    public static final RegistryObject<Block> RUBY_STAIRS = registerRubyBlock("ruby_stairs",
             () -> new StairsBlock(() -> RUBY_BLOCK.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.ROCK)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
 
 
-    public static final RegistryObject<Block> MADRA_ORE = registerBlock("madra_ore",
+    public static final RegistryObject<Block> MADRA_ORE = registerMadraBlock("madra_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
 
-    public static final RegistryObject<Block> MADRA_BLOCK = registerBlock("madra_block",
+    public static final RegistryObject<Block> MADRA_BLOCK = registerMadraBlock("madra_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> OATS = BLOCKS.register("oats_crop",
+            () -> new OatsBlock(AbstractBlock.Properties.from(Blocks.WHEAT)));
 
 
-    public static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+    public static <T extends Block>RegistryObject<T> registerRubyBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn);
+        registerRubyBlockItem(name, toReturn);
         return toReturn;
     }
 
-    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        if (name.substring(0, 4) == "madra") {
-            ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
-        } else {
+    public static <T extends Block>RegistryObject<T> registerMadraBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerMadraBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerRubyBlockItem(String name, RegistryObject<T> block) {
             ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                     new Item.Properties().group(ModItemGroup.RUBY_GROUP)));
-        }
+    }
+
+    private static <T extends Block> void registerMadraBlockItem(String name, RegistryObject<T> block) {
+            ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
     }
 
     public static void register(IEventBus eventBus) {

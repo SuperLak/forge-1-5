@@ -53,6 +53,8 @@
   "message.tutorialmod.inactive": "Inactive Mode",
   "tooltip.tutorialmod.active": "Active Mode",
 
+  "block.tutorialmod.oats_crop": "Oats",
+
   "itemGroup.rubyTab": "Ruby Tab",
   "itemGroup.madraTab": "Madra Tab"
 

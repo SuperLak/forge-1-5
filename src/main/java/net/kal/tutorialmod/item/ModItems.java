@@ -1,6 +1,7 @@
 package net.kal.tutorialmod.item;
 
 import net.kal.tutorialmod.TutorialMod;
+import net.kal.tutorialmod.block.ModBlocks;
 import net.kal.tutorialmod.item.custom.FireGem;
 import net.kal.tutorialmod.item.custom.JaiSpear;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -88,23 +89,29 @@ public class ModItems {
 
     public static final RegistryObject<Item> MADRA_HELMET = ITEMS.register("madra_helmet",
             () -> new ArmorItem(ModArmorMaterial.MADRA, EquipmentSlotType.HEAD,
-                    new Item.Properties().isImmuneToFire().group(ModItemGroup.MADRA_GROUP)));
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
     public static final RegistryObject<Item> MADRA_CHEST = ITEMS.register("madra_chestplate",
             () -> new ArmorItem(ModArmorMaterial.MADRA, EquipmentSlotType.CHEST,
-                    new Item.Properties().isImmuneToFire().group(ModItemGroup.MADRA_GROUP)));
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
     public static final RegistryObject<Item> MADRA_LEGGINGS = ITEMS.register("madra_leggings",
             () -> new ArmorItem(ModArmorMaterial.MADRA, EquipmentSlotType.LEGS,
-                    new Item.Properties().isImmuneToFire().group(ModItemGroup.MADRA_GROUP)));
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
     public static final RegistryObject<Item> MADRA_BOOTS = ITEMS.register("madra_boots",
             () -> new ArmorItem(ModArmorMaterial.MADRA, EquipmentSlotType.FEET,
-                    new Item.Properties().isImmuneToFire().group(ModItemGroup.MADRA_GROUP)));
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
 
     public static final RegistryObject<Item> JAI_SPEAR = ITEMS.register("jai_spear",
             () -> new JaiSpear(ModItemTier.MADRA, 2, -2f,
                     new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
-
     public static final RegistryObject<Item> SOULSEEKER = ITEMS.register("soulseeker",
             () -> new BowItem(new Item.Properties().group(ModItemGroup.MADRA_GROUP).maxStackSize(1)));
+
+
+
+    public static final RegistryObject<Item> OATS = ITEMS.register("oats",
+            () -> new BlockItem(ModBlocks.OATS.get(), new Item.Properties()
+                    .food(new Food.Builder().hunger(1).saturation(0.1f).fastToEat().build())
+                    .group(ModItemGroup.MADRA_GROUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
