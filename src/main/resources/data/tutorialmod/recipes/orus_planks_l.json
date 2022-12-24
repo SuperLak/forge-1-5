@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tutorialmod:orus_log"
+    }
+  ],
+  "result": {
+    "item": "tutorialmod:orus_planks",
+    "count": 4
+  }
+}

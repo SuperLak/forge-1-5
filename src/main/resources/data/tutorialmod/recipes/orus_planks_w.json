@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "tutorialmod:orus_wood"
+    }
+  ],
+  "result": {
+    "item": "tutorialmod:orus_planks",
+    "count": 4
+  }
+}

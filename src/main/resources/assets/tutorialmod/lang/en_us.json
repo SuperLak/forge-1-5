@@ -44,14 +44,17 @@
   "item.tutorialmod.jai_spear": "\u00A7lJai Spear\u00A7r",
   "item.tutorialmod.soulseeker": "\u00A75Suu, Ancient Bow of the Soulseeker\u00A7r",
 
+  "block.tutorialmod.orus_log": "Orus Log",
+  "block.tutorialmod.orus_wood": "Orus Wood",
+  "block.tutorialmod.stripped_orus_log": "Stripped Orus Log",
+  "block.tutorialmod.stripped_orus_wood": "Stripped Orus Wood",
+  "block.tutorialmod.orus_planks": "Orus Planks",
+
   "tooltip.tutorialmod.fire_gem_shift": "Click block to start fire; crouch & click to gain Fire Resistance",
   "tooltip.tutorialmod.fire_gem": "Hold \u00A7eSHIFT\u00A7r for more info",
 
   "tooltip.tutorialmod.jai_spear_shift": "Use on the ground to activate, granting power at the price of durability",
   "tooltip.tutorialmod.jai_spear": "Hold \u00A7eSHIFT\u00A7r for more info",
-
-  "message.tutorialmod.inactive": "Inactive Mode",
-  "tooltip.tutorialmod.active": "Active Mode",
 
   "item.tutorialmod.cloudgrass": "Cloudgrass",
   "block.tutorialmod.cloudgrass_crop": "Cloudgrass Seeds",

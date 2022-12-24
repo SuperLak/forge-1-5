@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "tutorialmod:orus_log"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:orus_wood",
+    "count": 3
+  }
+}

@@ -4,10 +4,7 @@ import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.block.custom.CloudgrassBlock;
 import net.kal.tutorialmod.item.ModItemGroup;
 import net.kal.tutorialmod.item.ModItems;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -44,8 +41,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> MADRA_BLOCK = registerMadraBlock("madra_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+
     public static final RegistryObject<Block> CLOUDGRASS = BLOCKS.register("cloudgrass_crop",
             () -> new CloudgrassBlock(AbstractBlock.Properties.from(Blocks.WHEAT)));
+
+
+    public static final RegistryObject<Block> ORUS_LOG = registerMadraBlock("orus_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.OAK_LOG)));
+    public static final RegistryObject<Block> ORUS_WOOD = registerMadraBlock("orus_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_ORUS_LOG = registerMadraBlock("stripped_orus_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_ORUS_WOOD = registerMadraBlock("stripped_orus_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> ORUS_PLANKS = registerMadraBlock("orus_planks",
+            () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
 
 
     public static <T extends Block>RegistryObject<T> registerRubyBlock(String name, Supplier<T> block) {
