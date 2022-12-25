@@ -9,6 +9,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -62,6 +63,9 @@ public class ModBlocks {
                     .tickRandomly().sound(SoundType.PLANT).notSolid()));
     public static final RegistryObject<Block> ORUS_SAPLING = registerMadraBlock("orus_sapling",
             () -> new SaplingBlock(new OrusTree(), AbstractBlock.Properties.from(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> OSMANTHUS = registerMadraBlock("osmanthus",
+            () -> new FlowerBlock(Effects.HASTE, 2, AbstractBlock.Properties.from(Blocks.OAK_SAPLING)));
 
 
     public static <T extends Block>RegistryObject<T> registerRubyBlock(String name, Supplier<T> block) {
