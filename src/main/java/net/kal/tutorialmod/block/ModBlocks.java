@@ -2,6 +2,7 @@ package net.kal.tutorialmod.block;
 
 import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.block.custom.CloudgrassBlock;
+import net.kal.tutorialmod.block.custom.trees.OrusTree;
 import net.kal.tutorialmod.item.ModItemGroup;
 import net.kal.tutorialmod.item.ModItems;
 import net.minecraft.block.*;
@@ -56,6 +57,11 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
     public static final RegistryObject<Block> ORUS_PLANKS = registerMadraBlock("orus_planks",
             () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> ORUS_LEAVES = registerMadraBlock("orus_leaves",
+            () -> new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f)
+                    .tickRandomly().sound(SoundType.PLANT).notSolid()));
+    public static final RegistryObject<Block> ORUS_SAPLING = registerMadraBlock("orus_sapling",
+            () -> new SaplingBlock(new OrusTree(), AbstractBlock.Properties.from(Blocks.OAK_SAPLING)));
 
 
     public static <T extends Block>RegistryObject<T> registerRubyBlock(String name, Supplier<T> block) {

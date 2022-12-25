@@ -111,6 +111,12 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterial.OZ, EquipmentSlotType.HEAD,
                     new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
 
+    public static final RegistryObject<Item> ORUS_FRUIT = ITEMS.register("orus_fruit",
+            () -> new Item(new Item.Properties()
+                    .food(new Food.Builder().hunger(3)
+                            .saturation(.2f).build())
+                    .group(ModItemGroup.MADRA_GROUP)));
+
 
 
     public static final RegistryObject<Item> CLOUDGRASS_SEEDS = ITEMS.register("cloudgrass_seeds",

@@ -11,5 +11,6 @@ public class ModWorldEvents {
     @SubscribeEvent
     public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
         ModOreGeneration.generateOres(event);
+        ModTreeGeneration.generateTrees(event);
     }
 }

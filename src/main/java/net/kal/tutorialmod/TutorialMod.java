@@ -67,6 +67,9 @@ public class TutorialMod
         // do something that can only be done on the client
         ModItemModelProperties.makeBow(ModItems.SOULSEEKER.get());
         RenderTypeLookup.setRenderLayer(ModBlocks.CLOUDGRASS.get(), RenderType.getCutout());
+
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORUS_LEAVES.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORUS_SAPLING.get(), RenderType.getCutout());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
