@@ -85,4 +85,19 @@ public class FireGem extends Item {
                 world.setBlockState(blockpos, blockstate, 11);
         }
     }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        ItemStack container = itemStack.copy();
+        if (container.attemptDamageItem(1, random, null)) {
+            return ItemStack.EMPTY;
+        } else {
+            return container;
+        }
+    }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack) {
+        return true;
+    }
 }
