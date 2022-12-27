@@ -63,6 +63,9 @@
 
   "item.tutorialmod.crown": "\u00A78\u00A7l\u00A7oCrown of Ozmanthus\u00A7r",
 
+  "block.tutorialmod.lightning_channeler": "Lightning Channeler",
+  "screen.tutorialmod.lightning_channeler": "Lightning Channeler",
+
   "itemGroup.rubyTab": "Ruby Tab",
   "itemGroup.madraTab": "Madra Tab"
 

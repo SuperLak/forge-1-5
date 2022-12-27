@@ -2,10 +2,14 @@ package net.kal.tutorialmod;
 
 import com.google.common.collect.ImmutableMap;
 import net.kal.tutorialmod.block.ModBlocks;
+import net.kal.tutorialmod.container.ModContainers;
 import net.kal.tutorialmod.item.ModItems;
+import net.kal.tutorialmod.screen.LightningChannelerScreen;
+import net.kal.tutorialmod.tileentity.ModTileEntities;
 import net.kal.tutorialmod.util.ModItemModelProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.AxeItem;
@@ -40,6 +44,8 @@ public class TutorialMod
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModTileEntities.register(eventBus);
+        ModContainers.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -71,6 +77,9 @@ public class TutorialMod
         RenderTypeLookup.setRenderLayer(ModBlocks.ORUS_LEAVES.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.ORUS_SAPLING.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.OSMANTHUS.get(), RenderType.getCutout());
+
+        ScreenManager.registerFactory(ModContainers.LIGHTNING_CHANNELER_CONTAINER.get(),
+                LightningChannelerScreen::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
