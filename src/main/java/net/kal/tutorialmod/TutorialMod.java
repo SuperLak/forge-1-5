@@ -7,8 +7,8 @@ import net.kal.tutorialmod.item.ModItems;
 import net.kal.tutorialmod.screen.LightningChannelerScreen;
 import net.kal.tutorialmod.tileentity.ModTileEntities;
 import net.kal.tutorialmod.util.ModItemModelProperties;
+import net.kal.tutorialmod.world.structure.ModStructures;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -47,6 +47,8 @@ public class TutorialMod
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
 
+        ModStructures.register(eventBus);
+
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);
@@ -66,6 +68,8 @@ public class TutorialMod
             AxeItem.BLOCK_STRIPPING_MAP = new ImmutableMap.Builder<Block, Block>().putAll(AxeItem.BLOCK_STRIPPING_MAP)
                     .put(ModBlocks.ORUS_LOG.get(), ModBlocks.STRIPPED_ORUS_LOG.get())
                     .put(ModBlocks.ORUS_WOOD.get(), ModBlocks.STRIPPED_ORUS_WOOD.get()).build();
+
+            ModStructures.setupStructures();
         });
     }
 
