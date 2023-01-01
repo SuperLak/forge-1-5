@@ -2,6 +2,7 @@ package net.kal.tutorialmod.block;
 
 import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.block.custom.CloudgrassBlock;
+import net.kal.tutorialmod.block.custom.FireGemBlock;
 import net.kal.tutorialmod.block.custom.LightningChannelerBlock;
 import net.kal.tutorialmod.block.custom.trees.OrusTree;
 import net.kal.tutorialmod.item.ModItemGroup;
@@ -30,6 +31,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> RUBY_BLOCK = registerRubyBlock("ruby_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+
+    public static final RegistryObject<Block> FIRE_GEM_BLOCK = registerRubyBlock("fire_gem_block",
+            () -> new FireGemBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
 
     public static final RegistryObject<Block> RUBY_STAIRS = registerRubyBlock("ruby_stairs",
             () -> new StairsBlock(() -> RUBY_BLOCK.get().getDefaultState(),
