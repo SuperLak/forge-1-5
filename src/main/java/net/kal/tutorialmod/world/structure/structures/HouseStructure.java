@@ -70,7 +70,7 @@ public class HouseStructure extends Structure<NoFeatureConfig> {
             int z = (chunkZ << 4) + 7;
             BlockPos blockpos = new BlockPos(x, 0, z);
 
-            //addPieces()
+            //addpieces()
             JigsawManager.func_242837_a(dynamicRegistryManager,
                     new VillageConfig(() -> dynamicRegistryManager.getRegistry(Registry.JIGSAW_POOL_KEY)
                             .getOrDefault(new ResourceLocation(TutorialMod.MOD_ID, "house/start_pool")),

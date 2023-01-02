@@ -2,8 +2,6 @@ package net.kal.tutorialmod.world.structure;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import net.kal.tutorialmod.TutorialMod;
-import net.kal.tutorialmod.world.structure.structures.HouseStructure;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;
@@ -13,6 +11,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.kal.tutorialmod.TutorialMod;
+import net.kal.tutorialmod.world.structure.structures.HouseStructure;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,12 +24,10 @@ public class ModStructures {
     public static final RegistryObject<Structure<NoFeatureConfig>> HOUSE =
             STRUCTURES.register("house", HouseStructure::new);
 
-    /**
-     * average distance apart in chunks between spawn attempts
-     * minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE
-     * this modifies the seed of the structure so no two structures always spawn over each-other.
-     * Make this large and unique.
-     **/
+    /* average distance apart in chunks between spawn attempts */
+    /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/
+     /* this modifies the seed of the structure so no two structures always spawn over each-other.
+     Make this large and unique. */
     public static void setupStructures() {
         setupMapSpacingAndLand(HOUSE.get(),
                 new StructureSeparationSettings(100,50, 1234567890),
