@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "tutorialmod:fire_gem"
+    },
+    "title": "Super Star",
+    "description": "Obtained a fire gem",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tutorialmod:tutorial_mod",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "tutorialmod:fire_gem"
+          }
+        ]
+      }
+    }
+  }
+}

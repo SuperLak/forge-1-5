@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "tutorialmod:madra"
+    },
+    "title": "Tutorial Mod",
+    "description": "Unlock the Power of the Soul",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "tutorialmod:textures/item/ruby.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "tutorialmod:ruby"
+          }
+        ]
+      }
+    }
+  }
+}
