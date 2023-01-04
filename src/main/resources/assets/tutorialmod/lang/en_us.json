@@ -3,6 +3,8 @@
   "block.tutorialmod.ruby_ore": "Ruby Ore",
   "block.tutorialmod.ruby_block": "Block of Ruby",
   "block.tutorialmod.ruby_stairs": "Ruby Stairs",
+  "block.tutorialmod.ruby_fence": "Ruby Fence",
+  "block.tutorialmod.ruby_fence_gate": "Ruby Fence Gate",
 
   "item.tutorialmod.ruby_sword": "Ruby Sword",
   "item.tutorialmod.ruby_pickaxe": "Ruby Pickaxe",

@@ -41,6 +41,14 @@ public class ModBlocks {
                     AbstractBlock.Properties.create(Material.ROCK)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
 
+    public static final RegistryObject<Block> RUBY_FENCE = registerRubyBlock("ruby_fence",
+            () -> new FenceBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
+
+    public static final RegistryObject<Block> RUBY_FENCE_GATE = registerRubyBlock("ruby_fence_gate",
+            () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
+
 
     public static final RegistryObject<Block> MADRA_ORE = registerMadraBlock("madra_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
