@@ -23,8 +23,8 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
-public class FireGem extends Item {
-    public FireGem(Properties properties) {
+public class FireGemItem extends Item {
+    public FireGemItem(Properties properties) {
         super(properties);
     }
 

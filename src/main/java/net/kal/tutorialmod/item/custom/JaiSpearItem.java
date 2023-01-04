@@ -1,14 +1,12 @@
 package net.kal.tutorialmod.item.custom;
 
 import net.kal.tutorialmod.item.SpearItem;
-import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
@@ -17,7 +15,6 @@ import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
@@ -25,12 +22,12 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
-public class JaiSpear extends SpearItem {
+public class JaiSpearItem extends SpearItem {
 
     private boolean isActive = false;
     private int tickCounter = 0;
 
-    public JaiSpear(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builderIn) {
+    public JaiSpearItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builderIn) {
         super(tier, attackDamageIn, attackSpeedIn, builderIn);
     }
 
