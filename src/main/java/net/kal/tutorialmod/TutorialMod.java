@@ -7,6 +7,7 @@ import net.kal.tutorialmod.item.ModItems;
 import net.kal.tutorialmod.screen.LightningChannelerScreen;
 import net.kal.tutorialmod.tileentity.ModTileEntities;
 import net.kal.tutorialmod.util.ModItemModelProperties;
+import net.kal.tutorialmod.world.entity.ModEntityType;
 import net.kal.tutorialmod.world.structure.ModStructures;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.ScreenManager;
@@ -48,6 +49,8 @@ public class TutorialMod
         ModContainers.register(eventBus);
 
         ModStructures.register(eventBus);
+
+        ModEntityType.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

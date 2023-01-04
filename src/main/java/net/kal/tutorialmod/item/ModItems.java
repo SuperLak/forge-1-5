@@ -2,8 +2,9 @@ package net.kal.tutorialmod.item;
 
 import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.block.ModBlocks;
-import net.kal.tutorialmod.item.custom.FireGem;
-import net.kal.tutorialmod.item.custom.JaiSpear;
+import net.kal.tutorialmod.item.custom.FireGemItem;
+import net.kal.tutorialmod.item.custom.JaiSpearItem;
+import net.kal.tutorialmod.item.custom.RubyArrowItem;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,7 +21,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().isImmuneToFire().group(ModItemGroup.RUBY_GROUP)));
 
     public static final RegistryObject<Item> FIRE_GEM = ITEMS.register("fire_gem",
-            () -> new FireGem(new Item.Properties().isImmuneToFire().group(ModItemGroup.RUBY_GROUP)
+            () -> new FireGemItem(new Item.Properties().isImmuneToFire().group(ModItemGroup.RUBY_GROUP)
                     .maxDamage(120)));
 
     public static final RegistryObject<Item> RUBY_SWORD = ITEMS.register("ruby_sword",
@@ -101,7 +102,7 @@ public class ModItems {
                     new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
 
     public static final RegistryObject<Item> JAI_SPEAR = ITEMS.register("jai_spear",
-            () -> new JaiSpear(ModItemTier.MADRA, 2, -2f,
+            () -> new JaiSpearItem(ModItemTier.MADRA, 2, -2f,
                     new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
     public static final RegistryObject<Item> SOULSEEKER = ITEMS.register("soulseeker",
             () -> new BowItem(new Item.Properties()
@@ -125,6 +126,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> CLOUDGRASS = ITEMS.register("cloudgrass",
             () -> new Item( new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
+
+    public static final RegistryObject<Item> RUBY_ARROW = ITEMS.register("ruby_arrow",
+            () -> new RubyArrowItem(new Item.Properties().group(ModItemGroup.RUBY_GROUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
