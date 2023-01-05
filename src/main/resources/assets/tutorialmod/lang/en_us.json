@@ -73,6 +73,18 @@
 
   "block.tutorialmod.osmanthus": "Osmanthus Flower",
 
+  "item.tutorialmod.bone_spear": "Bone Spear",
+  "item.tutorialmod.bone_shard": "Bone Shard",
+  "tooltip.tutorialmod.bone_spear_0": "Shards: 0/8",
+  "tooltip.tutorialmod.bone_spear_1": "Shards: 1/8",
+  "tooltip.tutorialmod.bone_spear_2": "Shards: 2/8",
+  "tooltip.tutorialmod.bone_spear_3": "Shards: 3/8",
+  "tooltip.tutorialmod.bone_spear_4": "Shards: 4/8",
+  "tooltip.tutorialmod.bone_spear_5": "Shards: 5/8",
+  "tooltip.tutorialmod.bone_spear_6": "Shards: 6/8",
+  "tooltip.tutorialmod.bone_spear_7": "Shards: 7/8",
+  "tooltip.tutorialmod.bone_spear_8": "Shards: 8/8",
+
   "itemGroup.rubyTab": "Ruby Tab",
   "itemGroup.madraTab": "Madra Tab"
 

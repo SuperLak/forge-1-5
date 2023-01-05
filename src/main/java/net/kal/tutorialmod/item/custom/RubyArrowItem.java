@@ -20,6 +20,11 @@ public class RubyArrowItem extends ArrowItem {
         return rubyArrowEntity;
     }
 
+    public AbstractArrowEntity createArrow(World worldIn, LivingEntity shooter) {
+        RubyArrowEntity rubyArrowEntity = new RubyArrowEntity(worldIn, shooter);
+        return rubyArrowEntity;
+    }
+
     @Override
     public boolean isInfinite(ItemStack stack, ItemStack bow, net.minecraft.entity.player.PlayerEntity player) {
         int enchant = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.enchantment.Enchantments.INFINITY, bow);

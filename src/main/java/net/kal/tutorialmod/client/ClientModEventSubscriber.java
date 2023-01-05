@@ -1,6 +1,7 @@
 package net.kal.tutorialmod.client;
 
 import net.kal.tutorialmod.TutorialMod;
+import net.kal.tutorialmod.client.renderer.entity.BoneShardRenderer;
 import net.kal.tutorialmod.client.renderer.entity.RubyArrowRenderer;
 import net.kal.tutorialmod.world.entity.ModEntityType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,5 +18,6 @@ public class ClientModEventSubscriber {
     public static void clientSetupEvent(FMLClientSetupEvent event) {
         event.setPhase(EventPriority.HIGH);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.RUBY_ARROW.get(), RubyArrowRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityType.BONE_SHARD.get(), BoneShardRenderer::new);
     }
 }

@@ -2,9 +2,7 @@ package net.kal.tutorialmod.item;
 
 import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.block.ModBlocks;
-import net.kal.tutorialmod.item.custom.FireGemItem;
-import net.kal.tutorialmod.item.custom.JaiSpearItem;
-import net.kal.tutorialmod.item.custom.RubyArrowItem;
+import net.kal.tutorialmod.item.custom.*;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -102,7 +100,7 @@ public class ModItems {
                     new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
 
     public static final RegistryObject<Item> JAI_SPEAR = ITEMS.register("jai_spear",
-            () -> new JaiSpearItem(ModItemTier.MADRA, 2, -2f,
+            () -> new JaiSpearItem(ModItemTier.MADRA, 2, -1f,
                     new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
     public static final RegistryObject<Item> SOULSEEKER = ITEMS.register("soulseeker",
             () -> new BowItem(new Item.Properties()
@@ -117,6 +115,14 @@ public class ModItems {
                     .food(new Food.Builder().hunger(3)
                             .saturation(.2f).build())
                     .group(ModItemGroup.MADRA_GROUP)));
+
+
+    public static final RegistryObject<Item> BONE_SHARD = ITEMS.register("bone_shard",
+            () -> new BoneShardItem(new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
+
+    public static final RegistryObject<Item> BONE_SPEAR = ITEMS.register("bone_spear",
+            () -> new BoneSpearItem(ModItemTier.BONE, 1, -1f,
+                    new Item.Properties().group(ModItemGroup.MADRA_GROUP)));
 
 
 
