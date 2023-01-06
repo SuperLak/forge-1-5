@@ -55,8 +55,8 @@ public class BoneSpearItem extends SpearItem {
                         // Plays Shoot Bow Sound when fired
                         worldIn.playSound((PlayerEntity)null, playerentity.getPosX(), playerentity.getPosY(), playerentity.getPosZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (random.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
 
-                        // Applies cooldown for 4 seconds
-                        spearCooldown(playerentity,80);
+                        // Applies cooldown for 2 seconds
+                        spearCooldown(playerentity,40);
 
                     }
                 }

@@ -49,6 +49,10 @@ public class ModBlocks {
             () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.IRON)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
 
+    public static final RegistryObject<Block> RUBY_SLAB = registerRubyBlock("ruby_slab",
+            () -> new SlabBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
+
 
     public static final RegistryObject<Block> MADRA_ORE = registerMadraBlock("madra_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
@@ -70,6 +74,7 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG)));
     public static final RegistryObject<Block> STRIPPED_ORUS_WOOD = registerMadraBlock("stripped_orus_wood",
             () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
+
     public static final RegistryObject<Block> ORUS_PLANKS = registerMadraBlock("orus_planks",
             () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> ORUS_LEAVES = registerMadraBlock("orus_leaves",
