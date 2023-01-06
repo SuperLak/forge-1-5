@@ -53,6 +53,16 @@ public class ModBlocks {
             () -> new SlabBlock(AbstractBlock.Properties.create(Material.IRON)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
 
+    public static final RegistryObject<Block> RUBY_BUTTON = registerRubyBlock("ruby_button",
+            () -> new StoneButtonBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)
+                    .doesNotBlockMovement()));
+
+    public static final RegistryObject<Block> RUBY_PRESSURE_PLATE = registerRubyBlock("ruby_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS,
+                    AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
+
 
     public static final RegistryObject<Block> MADRA_ORE = registerMadraBlock("madra_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
