@@ -78,15 +78,22 @@ public class TutorialMod
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        ModItemModelProperties.makeBow(ModItems.SOULSEEKER.get());
-        RenderTypeLookup.setRenderLayer(ModBlocks.CLOUDGRASS.get(), RenderType.getCutout());
+        event.enqueueWork(() -> {
 
-        RenderTypeLookup.setRenderLayer(ModBlocks.ORUS_LEAVES.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.ORUS_SAPLING.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.OSMANTHUS.get(), RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.RUBY_DOOR.get(), RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.RUBY_TRAPDOOR.get(), RenderType.getCutout());
 
-        ScreenManager.registerFactory(ModContainers.LIGHTNING_CHANNELER_CONTAINER.get(),
-                LightningChannelerScreen::new);
+            ModItemModelProperties.makeBow(ModItems.SOULSEEKER.get());
+            RenderTypeLookup.setRenderLayer(ModBlocks.CLOUDGRASS.get(), RenderType.getCutout());
+
+            RenderTypeLookup.setRenderLayer(ModBlocks.ORUS_LEAVES.get(), RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.ORUS_SAPLING.get(), RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.OSMANTHUS.get(), RenderType.getCutout());
+
+            ScreenManager.registerFactory(ModContainers.LIGHTNING_CHANNELER_CONTAINER.get(),
+                    LightningChannelerScreen::new);
+
+        });
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

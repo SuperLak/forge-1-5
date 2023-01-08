@@ -63,6 +63,14 @@ public class ModBlocks {
                     AbstractBlock.Properties.create(Material.IRON)
                     .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
 
+    public static final RegistryObject<Block> RUBY_DOOR = registerRubyBlock("ruby_door",
+            () -> new DoorBlock(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).setRequiresTool()
+                    .harvestTool(ToolType.PICKAXE).hardnessAndResistance(6f).notSolid()));
+
+    public static final RegistryObject<Block> RUBY_TRAPDOOR = registerRubyBlock("ruby_trapdoor",
+            () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).setRequiresTool()
+                    .harvestTool(ToolType.PICKAXE).hardnessAndResistance(6f).notSolid()));
+
 
     public static final RegistryObject<Block> MADRA_ORE = registerMadraBlock("madra_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
