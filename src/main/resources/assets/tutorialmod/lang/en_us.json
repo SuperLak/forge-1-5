@@ -90,6 +90,9 @@
   "tooltip.tutorialmod.bone_spear_7": "Shards: 7/8",
   "tooltip.tutorialmod.bone_spear_8": "Shards: 8/8",
 
+  "item.tutorialmod.oil_bucket": "Oil Bucket",
+  "fluid.tutorialmod.oil_fluid": "Oil Fluid",
+
   "itemGroup.rubyTab": "Ruby Tab",
   "itemGroup.madraTab": "Madra Tab"
 

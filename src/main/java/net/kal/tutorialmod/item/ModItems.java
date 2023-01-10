@@ -2,6 +2,7 @@ package net.kal.tutorialmod.item;
 
 import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.block.ModBlocks;
+import net.kal.tutorialmod.fluid.ModFluids;
 import net.kal.tutorialmod.item.custom.*;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -135,6 +136,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> RUBY_ARROW = ITEMS.register("ruby_arrow",
             () -> new RubyArrowItem(new Item.Properties().group(ModItemGroup.RUBY_GROUP)));
+
+    public static final RegistryObject<Item> OIL_BUCKET = ITEMS.register("oil_bucket",
+            () -> new BucketItem(()-> ModFluids.OIL_FLUID.get(),
+                    new Item.Properties().maxStackSize(1).group(ModItemGroup.RUBY_GROUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

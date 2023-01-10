@@ -3,6 +3,7 @@ package net.kal.tutorialmod;
 import com.google.common.collect.ImmutableMap;
 import net.kal.tutorialmod.block.ModBlocks;
 import net.kal.tutorialmod.container.ModContainers;
+import net.kal.tutorialmod.fluid.ModFluids;
 import net.kal.tutorialmod.item.ModItems;
 import net.kal.tutorialmod.screen.LightningChannelerScreen;
 import net.kal.tutorialmod.tileentity.ModTileEntities;
@@ -50,6 +51,8 @@ public class TutorialMod
 
         ModStructures.register(eventBus);
 
+        ModFluids.register(eventBus);
+
         ModEntityType.register(eventBus);
 
         eventBus.addListener(this::setup);
@@ -92,6 +95,10 @@ public class TutorialMod
 
             ScreenManager.registerFactory(ModContainers.LIGHTNING_CHANNELER_CONTAINER.get(),
                     LightningChannelerScreen::new);
+
+            RenderTypeLookup.setRenderLayer(ModFluids.OIL_FLUID.get(), RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(ModFluids.OIL_BLOCK.get(), RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(ModFluids.OIL_FLOWING.get(), RenderType.getTranslucent());
 
         });
     }
