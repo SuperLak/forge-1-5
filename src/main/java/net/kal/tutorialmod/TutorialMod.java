@@ -3,6 +3,7 @@ package net.kal.tutorialmod;
 import com.google.common.collect.ImmutableMap;
 import net.kal.tutorialmod.block.ModBlocks;
 import net.kal.tutorialmod.container.ModContainers;
+import net.kal.tutorialmod.data.recipes.ModRecipeTypes;
 import net.kal.tutorialmod.fluid.ModFluids;
 import net.kal.tutorialmod.item.ModItems;
 import net.kal.tutorialmod.screen.LightningChannelerScreen;
@@ -52,6 +53,9 @@ public class TutorialMod
         ModStructures.register(eventBus);
 
         ModFluids.register(eventBus);
+
+        ModRecipeTypes.register(eventBus);
+
 
         ModEntityType.register(eventBus);
 
