@@ -93,6 +93,11 @@
   "item.tutorialmod.oil_bucket": "Oil Bucket",
   "fluid.tutorialmod.oil_fluid": "Oil Fluid",
 
+  "entity.tutorialmod.buff_zombie": "Buff Zombie",
+  "entity.tutorialmod.pigeon": "Pigeon",
+  "item.tutorialmod.buff_zombie_spawn_egg": "Buff Zombie Spawn Egg",
+  "item.tutorialmod.pigeon_spawn_egg": "Pigeon Spawn Egg",
+
   "itemGroup.rubyTab": "Ruby Tab",
   "itemGroup.madraTab": "Madra Tab"
 

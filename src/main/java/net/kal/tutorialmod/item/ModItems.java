@@ -2,6 +2,7 @@ package net.kal.tutorialmod.item;
 
 import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.block.ModBlocks;
+import net.kal.tutorialmod.entity.ModEntityTypes;
 import net.kal.tutorialmod.fluid.ModFluids;
 import net.kal.tutorialmod.item.custom.*;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -140,6 +141,14 @@ public class ModItems {
     public static final RegistryObject<Item> OIL_BUCKET = ITEMS.register("oil_bucket",
             () -> new BucketItem(()-> ModFluids.OIL_FLUID.get(),
                     new Item.Properties().maxStackSize(1).group(ModItemGroup.RUBY_GROUP)));
+
+    public static final RegistryObject<ModSpawnEggItem> BUFF_ZOMBIE_SPAWN_EGG = ITEMS.register("buff_zombie_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.BUFF_ZOMBIE, 0x464F56, 0x1D6336,
+                    new Item.Properties().group(ModItemGroup.RUBY_GROUP)));
+
+    public static final RegistryObject<ModSpawnEggItem> PIGEON_SPAWN_EGG = ITEMS.register("pigeon_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.PIGEON, 0x879995, 0x576ABC,
+                    new Item.Properties().group(ModItemGroup.RUBY_GROUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

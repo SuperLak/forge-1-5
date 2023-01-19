@@ -33,6 +33,8 @@ public class ModWorldEvents {
 
         ModFlowerGeneration.generateFlowers(event);
         ModTreeGeneration.generateTrees(event);
+
+        ModEntityGeneration.onEntitySpawn(event);
     }
 
     @SubscribeEvent

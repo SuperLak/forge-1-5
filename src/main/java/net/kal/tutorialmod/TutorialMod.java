@@ -4,6 +4,9 @@ import com.google.common.collect.ImmutableMap;
 import net.kal.tutorialmod.block.ModBlocks;
 import net.kal.tutorialmod.container.ModContainers;
 import net.kal.tutorialmod.data.recipes.ModRecipeTypes;
+import net.kal.tutorialmod.entity.ModEntityTypes;
+import net.kal.tutorialmod.entity.render.BuffZombieRenderer;
+import net.kal.tutorialmod.entity.render.PigeonRenderer;
 import net.kal.tutorialmod.fluid.ModFluids;
 import net.kal.tutorialmod.item.ModItems;
 import net.kal.tutorialmod.screen.LightningChannelerScreen;
@@ -21,6 +24,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -56,6 +60,7 @@ public class TutorialMod
 
         ModRecipeTypes.register(eventBus);
 
+        ModEntityTypes.register(eventBus);
 
         ModEntityType.register(eventBus);
 
@@ -105,6 +110,9 @@ public class TutorialMod
             RenderTypeLookup.setRenderLayer(ModFluids.OIL_FLOWING.get(), RenderType.getTranslucent());
 
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BUFF_ZOMBIE.get(), BuffZombieRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.PIGEON.get(), PigeonRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
