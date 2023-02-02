@@ -12,7 +12,9 @@ import net.kal.tutorialmod.item.ModItems;
 import net.kal.tutorialmod.screen.LightningChannelerScreen;
 import net.kal.tutorialmod.tileentity.ModTileEntities;
 import net.kal.tutorialmod.util.ModItemModelProperties;
+import net.kal.tutorialmod.world.biome.ModBiomes;
 import net.kal.tutorialmod.world.entity.ModEntityType;
+import net.kal.tutorialmod.world.gen.ModBiomeGeneration;
 import net.kal.tutorialmod.world.structure.ModStructures;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.ScreenManager;
@@ -62,6 +64,8 @@ public class TutorialMod
 
         ModEntityTypes.register(eventBus);
 
+        ModBiomes.register(eventBus);
+
         ModEntityType.register(eventBus);
 
         eventBus.addListener(this::setup);
@@ -85,6 +89,8 @@ public class TutorialMod
                     .put(ModBlocks.ORUS_WOOD.get(), ModBlocks.STRIPPED_ORUS_WOOD.get()).build();
 
             ModStructures.setupStructures();
+
+            ModBiomeGeneration.generateBiomes();
         });
     }
 
