@@ -3,6 +3,7 @@ package net.kal.tutorialmod.block;
 import net.kal.tutorialmod.TutorialMod;
 import net.kal.tutorialmod.block.custom.CloudgrassBlock;
 import net.kal.tutorialmod.block.custom.FireGemBlock;
+import net.kal.tutorialmod.block.custom.KaupenAltarBlock;
 import net.kal.tutorialmod.block.custom.LightningChannelerBlock;
 import net.kal.tutorialmod.block.custom.trees.OrusTree;
 import net.kal.tutorialmod.item.ModItemGroup;
@@ -106,6 +107,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> LIGHTNING_CHANNELER = registerMadraBlock("lightning_channeler",
             () -> new LightningChannelerBlock(AbstractBlock.Properties.create(Material.IRON)));
+
+    public static final RegistryObject<Block> KAUPEN_ALTAR = registerMadraBlock("kaupen_altar",
+            () -> new KaupenAltarBlock(AbstractBlock.Properties.create(Material.IRON).notSolid()));
 
 
     public static <T extends Block>RegistryObject<T> registerRubyBlock(String name, Supplier<T> block) {
