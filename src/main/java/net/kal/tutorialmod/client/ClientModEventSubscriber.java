@@ -16,6 +16,9 @@ public class ClientModEventSubscriber {
     
     @SubscribeEvent
     public static void clientSetupEvent(FMLClientSetupEvent event) {
+
+        ModKeyBindings.register(event);
+
         event.setPhase(EventPriority.HIGH);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.RUBY_ARROW.get(), RubyArrowRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.BONE_SHARD.get(), BoneShardRenderer::new);

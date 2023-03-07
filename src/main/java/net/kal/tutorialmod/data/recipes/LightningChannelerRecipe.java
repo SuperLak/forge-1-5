@@ -114,7 +114,7 @@ public class LightningChannelerRecipe implements ILightningChannelerRecipe{
         @Nullable
         @Override
         public LightningChannelerRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
-            NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(buffer.readInt(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.read(buffer));
@@ -122,7 +122,7 @@ public class LightningChannelerRecipe implements ILightningChannelerRecipe{
 
             ItemStack output = buffer.readItemStack();
             return new LightningChannelerRecipe(recipeId, output,
-                    inputs, null);
+                    inputs, buffer.readEnumValue(Weather.class));
         }
 
         @Override
@@ -132,6 +132,7 @@ public class LightningChannelerRecipe implements ILightningChannelerRecipe{
                 ing.write(buffer);
             }
             buffer.writeItemStack(recipe.getRecipeOutput(), false);
+            buffer.writeEnumValue(recipe.weather);
         }
     }
 }
