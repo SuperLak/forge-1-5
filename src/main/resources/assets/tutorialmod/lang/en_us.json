@@ -100,6 +100,12 @@
 
   "block.tutorialmod.kaupen_altar": "Kaupen Altar",
 
+  "key.tutorialmod.tutorial": "Tutorial Tab",
+  "key.tutorialmod.example_key": "Example Key",
+
+  "message.tutorialmod.drink_water": "Drinking Water",
+  "message.tutorialmod.no_water": "No Water Nearby!",
+
   "itemGroup.rubyTab": "Ruby Tab",
   "itemGroup.madraTab": "Madra Tab"
 

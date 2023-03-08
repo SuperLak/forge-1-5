@@ -9,6 +9,7 @@ import net.kal.tutorialmod.entity.render.BuffZombieRenderer;
 import net.kal.tutorialmod.entity.render.PigeonRenderer;
 import net.kal.tutorialmod.fluid.ModFluids;
 import net.kal.tutorialmod.item.ModItems;
+import net.kal.tutorialmod.networking.ModMessages;
 import net.kal.tutorialmod.screen.LightningChannelerScreen;
 import net.kal.tutorialmod.tileentity.ModTileEntities;
 import net.kal.tutorialmod.util.ModItemModelProperties;
@@ -101,6 +102,8 @@ public class TutorialMod
             EntitySpawnPlacementRegistry.register(ModEntityTypes.PIGEON.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND,
                     Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
         });
+
+        ModMessages.register();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
