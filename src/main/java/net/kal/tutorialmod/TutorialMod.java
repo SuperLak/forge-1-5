@@ -1,7 +1,10 @@
 package net.kal.tutorialmod;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.graph.Network;
 import net.kal.tutorialmod.block.ModBlocks;
+import net.kal.tutorialmod.capability.IManaCapability;
+import net.kal.tutorialmod.capability.ModCapabilities;
 import net.kal.tutorialmod.container.ModContainers;
 import net.kal.tutorialmod.data.recipes.ModRecipeTypes;
 import net.kal.tutorialmod.entity.ModEntityTypes;
@@ -33,15 +36,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
+import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -50,7 +52,9 @@ public class TutorialMod
 {
     // Directly reference a log4j logger.
     public static final String MOD_ID = "tutorialmod";
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogManager().getLogger("");
+
+    public static final List<IManaCapability> TRINKETS = new ArrayList<>();
 
     public TutorialMod() {
         // Register the setup method for modloading
@@ -103,6 +107,8 @@ public class TutorialMod
                     Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
         });
 
+        ModCapabilities.register();
+
         ModMessages.register();
     }
 
@@ -144,9 +150,6 @@ public class TutorialMod
     private void processIMC(final InterModProcessEvent event)
     {
         // some example code to receive and process InterModComms from other mods
-        LOGGER.info("Got IMC {}", event.getIMCStream().
-                map(m->m.getMessageSupplier().get()).
-                collect(Collectors.toList()));
     }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -164,5 +167,10 @@ public class TutorialMod
             // register a new block here
             LOGGER.info("HELLO from Register Block");
         }
+    }
+
+    @SubscribeEvent
+    public void loadComplete(FMLLoadCompleteEvent event) {
+
     }
 }
